@@ -9,5 +9,8 @@
 <body>
 <%@ include file="../include/menu.jsp" %>
 	<h1>출판사페이지입니다.</h1>
+	<p><a href="">출판사리스트 보러가기</a></p>
+	<p><a href="">출판사 신규등록하러가기</a></p>
+	<p><a href="">출판사 정보수정하러가기</a></p>
 </body>
 </html>
