@@ -5,6 +5,14 @@ public class BorrowerVO {
 	private String bor_name;
 	private String bor_tel;
 	private String bor_addr;
+	private String lib_no;
+	
+	public String getLib_no() {
+		return lib_no;
+	}
+	public void setLib_no(String lib_no) {
+		this.lib_no = lib_no;
+	}
 	public String getBor_no() {
 		return bor_no;
 	}
@@ -31,9 +39,10 @@ public class BorrowerVO {
 	}
 	@Override
 	public String toString() {
-		return "borrowerVO [bor_no=" + bor_no + ", bor_name=" + bor_name + ", bor_tel=" + bor_tel + ", bor_addr="
-				+ bor_addr + "]";
+		return "BorrowerVO [bor_no=" + bor_no + ", bor_name=" + bor_name + ", bor_tel=" + bor_tel + ", bor_addr="
+				+ bor_addr + ", lib_no=" + lib_no + "]";
 	}
+	
 	
 	
 }

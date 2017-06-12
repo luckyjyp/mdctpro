@@ -17,9 +17,12 @@
 			<th>연락처</th>
 			<th>도서관ID</th>
 		</tr>
-		<c:forEach val="" items="">
+		<c:forEach val="bor" items="${list}">
 			<tr>
-				<td></td>
+				<td>${bor.bor_no}</td>
+				<td>${bor.bor_name}</td>
+				<td>${bor.bor_tel}</td>
+				<td>${bor.lib_no}</td>
 			</tr>
 		</c:forEach>
 	</table>

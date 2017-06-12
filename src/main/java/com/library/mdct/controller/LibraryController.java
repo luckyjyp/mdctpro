@@ -20,10 +20,9 @@ public class LibraryController {
 	
 	//대출자관리
 	@RequestMapping("borrower.do")
-	public String borrowerController(ModelAndView mav){
-		List<BorrowerVO> list;
-		
-		//mav.addObject("list", list);
+	public String borrowerController(ModelAndView mav) throws Exception{
+		List<BorrowerVO> list = borrower.borrowerList();
+		mav.addObject("list", list);
 		return "borrower/borrowerlist";
 	}
 	
