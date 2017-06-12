@@ -7,4 +7,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @RequestMapping("/publisher/*")
 public class PublisherController {
 	
+	@RequestMapping("publist.do")
+	public String publisherList(){
+		
+		return "publisher/pub_list";
+	}
 }
