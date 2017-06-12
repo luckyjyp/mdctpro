@@ -5,8 +5,23 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>대출자리스트</title>
+<%@ include file="../include/header.jsp" %>
 </head>
 <body>
-
+<%@ include file="../include/menu.jsp" %>
+		<h2>대출자 전체 리스트</h2>
+	<table>
+		<tr>
+			<th>대출자번호</th>
+			<th>성함</th>
+			<th>연락처</th>
+			<th>도서관ID</th>
+		</tr>
+		<c:forEach val="" items="">
+			<tr>
+				<td></td>
+			</tr>
+		</c:forEach>
+	</table>
 </body>
 </html>

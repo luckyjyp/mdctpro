@@ -1,6 +1,6 @@
 package com.library.mdct.dto;
 
-public class libraryVO {
+public class LibraryVO {
 	private String lib_no;
 	private String lib_name;
 	private String lib_addr;

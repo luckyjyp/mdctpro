@@ -1,6 +1,6 @@
 package com.library.mdct.dto;
 
-public class borrowerVO {
+public class BorrowerVO {
 	private String bor_no;
 	private String bor_name;
 	private String bor_tel;

@@ -1,6 +1,6 @@
 package com.library.mdct.dto;
 
-public class publisherVO {
+public class PublisherVO {
 	private String pub_no;
 	private String pub_name;
 	private String pub_addr;

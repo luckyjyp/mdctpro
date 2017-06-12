@@ -1,16 +1,29 @@
 package com.library.mdct.controller;
 
+import java.util.List;
+
+import javax.inject.Inject;
+
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
+
+import com.library.mdct.dto.BorrowerVO;
+import com.library.mdct.service.BorrowerService;
 
 @Controller
 @RequestMapping("/library/*")
 public class LibraryController {
 	
+	@Inject
+	BorrowerService borrower;
+	
 	//대출자관리
 	@RequestMapping("borrower.do")
 	public String borrowerController(ModelAndView mav){
+		List<BorrowerVO> list;
+		
+		//mav.addObject("list", list);
 		return "borrower/borrowerlist";
 	}
 	

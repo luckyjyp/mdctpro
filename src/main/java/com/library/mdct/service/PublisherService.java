@@ -1,5 +1,5 @@
 package com.library.mdct.service;
 
-public interface publisherService {
+public interface PublisherService {
 
 }
