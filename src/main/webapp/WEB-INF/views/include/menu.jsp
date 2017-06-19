@@ -5,6 +5,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Insert title here</title>
+<%@ include file="./header.jsp" %>
 </head>
 <body>
 	<button type="button" onclick="location.href='${path}/'">메인페이지가기</button>

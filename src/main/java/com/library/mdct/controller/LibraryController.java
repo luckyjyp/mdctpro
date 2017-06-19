@@ -42,8 +42,6 @@ public class LibraryController {
 	@Inject
 	PublisherService publisher;
 	
-	
-	
 	@Resource(name="libraryServiceImpl")
 	LibraryService library;
 	

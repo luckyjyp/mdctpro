@@ -16,4 +16,9 @@ public interface BorrowerDAO {
 	public void borrowerUpdate(Map<String, String> map) throws Exception;
 	//대출자 삭제
 	public void borrowerDelete(String borNo) throws Exception;
+	
+	//로그인 체크
+	public boolean loginCheck(BorrowerVO vo);
+	//로그인 정보
+	public BorrowerVO viewMember(BorrowerVO vo);
 }

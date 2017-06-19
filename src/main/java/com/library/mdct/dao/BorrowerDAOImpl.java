@@ -45,4 +45,17 @@ public class BorrowerDAOImpl implements BorrowerDAO {
 
 	}
 
+	@Override
+	public boolean loginCheck(BorrowerVO vo) {
+		// TODO Auto-generated method stub
+		String name = sqlSession.selectOne("bor.loginCheck", vo);
+		return (name == null) ? false : true;
+	}
+
+	@Override
+	public BorrowerVO viewMember(BorrowerVO vo) {
+		// TODO Auto-generated method stub
+		return sqlSession.selectOne("bor.viewMember", vo);
+	}
+
 }

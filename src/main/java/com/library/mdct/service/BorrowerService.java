@@ -3,6 +3,8 @@ package com.library.mdct.service;
 import java.util.List;
 import java.util.Map;
 
+import javax.servlet.http.HttpSession;
+
 import com.library.mdct.dto.BorrowerVO;
 
 
@@ -17,4 +19,9 @@ public interface BorrowerService {
 	public void borrowerUpdate(Map<String, String> map) throws Exception;
 	//대출자 삭제
 	public void borrowerDelete(String borNo) throws Exception;
+	
+	//로그인 체크
+	public boolean loginCheck(BorrowerVO vo, HttpSession session);
+	//로그아웃
+	public void logout(HttpSession session);
 }

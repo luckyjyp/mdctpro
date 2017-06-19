@@ -4,6 +4,7 @@ import java.util.List;
 import java.util.Map;
 
 import javax.inject.Inject;
+import javax.servlet.http.HttpSession;
 
 import org.springframework.stereotype.Service;
 
@@ -43,6 +44,32 @@ public class BorrowerServiceImpl implements BorrowerService{
 	public void borrowerDelete(String borNo) throws Exception {
 		// TODO Auto-generated method stub
 		
+	}
+
+	@Override
+	public boolean loginCheck(BorrowerVO vo, HttpSession session) {
+		// TODO Auto-generated method stub
+		
+		boolean result = borrowerDAO.loginCheck(vo);
+		
+		if(result) {
+			BorrowerVO vo2 = viewMember(vo);
+			
+			session.setAttribute("bor_no", vo2.getBor_no());
+			session.setAttribute("bor_name", vo2.getBor_name());
+		}
+		return result;
+	}
+
+	private BorrowerVO viewMember(BorrowerVO vo) {
+		// TODO Auto-generated method stub
+		return borrowerDAO.viewMember(vo);
+	}
+
+	@Override
+	public void logout(HttpSession session) {
+		// TODO Auto-generated method stub
+		session.invalidate();
 	}
 
 }

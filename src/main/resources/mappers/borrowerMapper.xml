@@ -5,4 +5,16 @@
 		SELECT BOR_NO, BOR_NAME, BOR_TEL, BOR_ADDR, LIB_NO
 		FROM BORROWER
 	</select>
+	
+	<select id="loginCheck" resultType="String">
+	   select bor_name 
+	   from borrower
+	   where bor_no = #{bor_no} AND bor_tel = #{bor_tel}
+	</select>
+	
+  <select id="viewMember" resultType="borrower">
+     select bor_name, bor_name, bor_tel, bor_addr, lib_no
+     from borrower
+     where bor_no = #{bor_no} AND bor_tel = #{bor_tel}
+  </select>
 </mapper>
