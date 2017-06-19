@@ -1,8 +1,91 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="lib">
-	<select id="librarylist" resultType="com.library.mdct.dto.libraryVO">
+	<!-- 도서관 crud -->
+	<select id="librarylist" resultType="library">
 		SELECT * 
-		FROM LIB_LIST;
+		FROM LIB_LIST
 	</select>
+	
+	<!-- 도서crud -->
+	<select id="booklist" resultType="book">
+		SELECT *
+		FROM BOOK
+	</select>
+	
+	<!-- 도서번호중복확인시 -->
+	<select id="booknochk" parameterType="String" resultType="int">
+		SELECT COUNT(*)
+		FROM BOOK
+		WHERE BOOK_NO = #{value}
+	</select>
+	
+	<select id="bookInfo" parameterType="map" resultType="com.library.mdct.dto.BookVO">
+		SELECT BOOK_NO, BOOK_NAME, WRITER, GENRE, PRICE, PUB_NO
+		FROM BOOK
+		WHERE BOOK_NO = ${book_no}
+	</select>
+	
+	<insert id="bookInsert" parameterType="book">
+		INSERT INTO BOOK (BOOK_NO, BOOK_NAME, WRITER, GENRE, PRICE, PUB_NO)
+		VALUES (#{book_no}
+				,#{book_name}
+				,#{writer}
+				,#{genre}
+				,#{price}
+				,#{pub_no})
+	</insert>
+	
+	<update id="bookUpdate">
+		UPDATE BOOK
+		<set>
+			<if test="book_name != null">BOOK_NAME = #{book_name},</if>
+			<if test="writer != null">WRITER = #{writer},</if>
+			<if test="genre != null">GENRE = #{genre},</if>
+			<if test="price != null">PRICE = #{price},</if>
+			<if test="pub_no != null">PUB_NO = #{pub_no}</if>
+		</set>
+		WHERE BOOK_NO = #{book_no}
+	</update>
+	
+	<delete id="bookDelete">
+		DELETE FROM BOOK
+		WHERE BOOK_NO = #{book_no}
+	</delete>
+	
+	<!-- 보관도서중복확인 -->
+	<select id="storenochk" parameterType="String" resultType="int">
+		SELECT COUNT(*)
+		FROM BOOKSTORE
+		WHERE BOOK_NO = #{value}
+	</select>
+	
+	<!-- 대출자확인 -->
+	<select id="bornochk" parameterType="String" resultType="int">
+		SELECT COUNT(*)
+		FROM BORROWER
+		WHERE BOR_NO = #{value}
+	</select>
+	
+	<!-- 보관대여crud -->
+	<select id="bookrent">
+		SELECT *
+		FROM BOOKRENTAL
+	</select>
+	
+	<insert id="addBookRent">
+		INSERT INTO BOOKRENTAL (BOR_NO, BOOK_NO, RENTALPERIOD, OVERDUE)
+		VALUES (#{bor_no},#{book_no},#{rentalPeriod},#{overdue})
+	</insert>
+	
+	<select id="bookstore" resultType="map">
+		SELECT A.LIB_NO, A.BOOK_NO,B.BOOK_NAME, A.RENTAL, A.POS_PERIOD
+		FROM BOOKSTORE A, BOOK B
+    WHERE A.BOOK_NO = B.BOOK_NO
+	</select>
+	
+	<insert id="addBookStore" parameterType="map">
+		INSERT INTO BOOKSTORE (LIB_NO,BOOK_NO,POS_PERIOD)
+		VALUES (#{lib_no},#{book_no},SYSDATE)
+	</insert>
 </mapper>

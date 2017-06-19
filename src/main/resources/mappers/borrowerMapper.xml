@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="bor">
-	<select id="borList" resultType="com.library.mdct.dto.borrowerVO">
+	<select id="borList" resultType="borrower">
 		SELECT BOR_NO, BOR_NAME, BOR_TEL, BOR_ADDR, LIB_NO
 		FROM BORROWER
 	</select>

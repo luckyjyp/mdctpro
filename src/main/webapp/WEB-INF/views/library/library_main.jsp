@@ -11,10 +11,11 @@
 <%@ include file="../include/menu.jsp" %>
 	<h1>도서관페이지입니다.</h1>
 	<div id="lib_list">
-		<p><a href="">도서관 전체리스트 보러가기</a></p>
+		<p><a href="${path}/library/library.do">도서관 전체리스트 보러가기</a></p>
 		<p><a href="${path}/library/borrower.do">대출자 리스트로 가기</a></p>
 		<p><a href="${path}/library/book.do">도서 리스트로 가기</a></p>
 		<p><a href="${path}/library/rental.do">대여 및 반납하러 가기</a></p>
+		<p><a href="${path}/library/bookStore.do">도서현황 목록으로 가기</a></p>
 	</div>
 </body>
 </html>

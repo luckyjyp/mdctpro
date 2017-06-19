@@ -7,10 +7,10 @@
 <title>Insert title here</title>
 </head>
 <body>
-	<button type="button" onclick="location.href='/mdct/'">메인페이지가기</button>
-	<button type="button" onclick="location.href='lib.do'">도서관페이지가기</button>
-	<button type="button" onclick="location.href='pub.do'">출판사페이지가기</button>
-	<button type="button" onclick="location.href='bor.do'">대출자페이지가기</button>
+	<button type="button" onclick="location.href='${path}/'">메인페이지가기</button>
+	<button type="button" onclick="location.href='${path}/lib.do'">도서관페이지가기</button>
+	<button type="button" onclick="location.href='${path}/pub.do'">출판사페이지가기</button>
+	<button type="button" onclick="location.href='${path}/bor.do'">대출자페이지가기</button>
 	<hr>
 </body>
 </html>

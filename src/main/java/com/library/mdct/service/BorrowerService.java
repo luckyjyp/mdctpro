@@ -5,6 +5,7 @@ import java.util.Map;
 
 import com.library.mdct.dto.BorrowerVO;
 
+
 public interface BorrowerService {
 	//대출자상세정보조회
 	public BorrowerVO borrowerSearch(String borNo) throws Exception;

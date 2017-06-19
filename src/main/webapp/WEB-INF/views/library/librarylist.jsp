@@ -4,25 +4,25 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>대출자리스트</title>
+<title>도서관 목록</title>
 <%@ include file="../include/header.jsp" %>
 </head>
 <body>
 <%@ include file="../include/menu.jsp" %>
-		<h2>대출자 전체 리스트</h2>
+	<h2>전체 도서관 리스트</h2>
 	<table border="1" cellspacing="0">
 		<tr>
-			<th>대출자번호</th>
-			<th>성함</th>
+			<th>도서관번호</th>
+			<th>도서관명</th>
+			<th>주소</th>
 			<th>연락처</th>
-			<th>도서관ID</th>
 		</tr>
-		<c:forEach var="bor" items="${list}">
+		<c:forEach var="lib" items="${list}">
 			<tr>
-				<td>${bor.bor_no}</td>
-				<td>${bor.bor_name}</td>
-				<td>${bor.bor_tel}</td>
-				<td>${bor.lib_no}</td>
+				<td>${lib.lib_no}</td>
+				<td>${lib.lib_name}</td>
+				<td>${lib.lib_addr}</td>
+				<td>${lib.lib_tel}</td>
 			</tr>
 		</c:forEach>
 	</table>

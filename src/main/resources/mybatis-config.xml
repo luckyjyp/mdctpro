@@ -1,7 +1,27 @@
-<?xml version="1.0" encoding="UTF-8"?>
+<?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE configuration
   PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
   "http://mybatis.org/dtd/mybatis-3-config.dtd">
-  <configuration>
-  
-  </configuration>
+ <configuration>
+ 
+ <!--  <environments default="development">
+    <environment id="development">
+      <transactionManager type="JDBC"/>
+      <dataSource type="POOLED">
+        <property name="driver" value="${driver}"/>
+        <property name="url" value="${url}"/>
+        <property name="username" value="${username}"/>
+        <property name="password" value="${password}"/>
+      </dataSource>
+    </environment>
+  </environments>
+  <mappers>
+    <mapper resource="src/main/resources/mappers/memberMapper.xml"/>
+  </mappers>-->
+  <typeAliases>
+ 	<typeAlias type="com.library.mdct.dto.BorrowerVO" alias="borrower"/> 
+ 	<typeAlias type="com.library.mdct.dto.LibraryVO" alias="library"/> 
+ 	<typeAlias type="com.library.mdct.dto.BookVO" alias="book"/> 
+ 	<typeAlias type="com.library.mdct.dto.PublisherVO" alias="publisher"/>
+ </typeAliases>
+</configuration>

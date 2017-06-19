@@ -16,11 +16,12 @@
         <org.aspectj-version>1.6.10</org.aspectj-version>
         <org.slf4j-version>1.7.21</org.slf4j-version>
 	</properties>
-	<repositories>
-        <repository>
-            <id>codelds</id>
-            <url>https://code.lds.org/nexus/content/groups/main-repo</url>
-        </repository>
+    <repositories>
+		<!-- 오라클 추가시 꼭 repository도 같이추가 -->
+			<repository>
+	            <id>codelds</id>
+	            <url>https://code.lds.org/nexus/content/groups/main-repo</url>
+	   		</repository>
     </repositories>
 	<dependencies>
 		<!-- Spring -->
@@ -94,6 +95,12 @@
 			<version>${org.aspectj-version}</version>
 		</dependency>	
 		
+		<!-- json -->
+		<dependency>
+			<groupId>com.googlecode.json-simple</groupId>
+			<artifactId>json-simple</artifactId>
+			<version>1.1</version>
+  		</dependency>
 		<!-- Logging -->
 		<!-- logback 로깅 관련 -->
         <dependency>
